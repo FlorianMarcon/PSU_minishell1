@@ -1,0 +1,21 @@
+/*
+** EPITECH PROJECT, 2017
+** minishell
+** File description:
+** built_set_env
+*/
+
+#include "my.h"
+char	**set_env(char **env, char **argu);
+int	how_long_tab(const char **tab);
+
+char	**built_set_env(char **env, char **argu)
+{
+	int size = how_long_tab((const char **)argu);
+
+	if (size <= 2 && size > 0)
+		env = set_env(env, argu);
+	else
+		my_printf("setenv: Too many arguments\n");
+	return (env);
+}
