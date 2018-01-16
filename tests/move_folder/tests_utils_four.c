@@ -12,17 +12,14 @@ char	**built_move_folder(char **env, char **argu);
 
 char	**create_tab_test(void)
 {
-	char **tab = NULL;
+	char **tab = malloc(sizeof(char *) * 4);
 	char *str = malloc(sizeof(char) * 2);
-	char *str2 = malloc(sizeof(char) * 2);
 	char *pwd = malloc(sizeof(char) * 5);
 
-	if ((tab = malloc(sizeof(char *) * 4)) == NULL)
+	if (tab == NULL || str == NULL || pwd == NULL)
 		return (NULL);
 	str[0] = 'a';
 	str[1] = '\0';
-	str2[0] = 'O';
-	str2[1] = '\0';
 	pwd[0] = 'P';
 	pwd[1] = 'W';
 	pwd[2] = 'D';
@@ -30,10 +27,9 @@ char	**create_tab_test(void)
 	pwd[4] = '\0';
 	tab[0] = str;
 	tab[1] = pwd;
-	tab[2] = str2;
+	tab[2] = my_strcat(str, "yes\0");
 	tab[3] = NULL;
 	return (tab);
-
 }
 Test(built_move_folder, test1)
 {

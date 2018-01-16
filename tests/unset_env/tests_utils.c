@@ -16,7 +16,6 @@ int	how_long_tab(const char **tab);
 char	**unset_env(char **env, char *var);
 char	**built_unset_env(char **env, char **argu);
 
-/*
 Test(prepare_new_env_less_one, test)
 {
 	char str[] = "sentence";
@@ -27,10 +26,10 @@ Test(prepare_new_env_less_one, test)
 	tab[0] = str;
 	tab[1] = str;
 	tab[2] = str;
-	tab[3] = NULL;ma
+	tab[3] = NULL;
 	tab = prepare_new_env_less_one(tab);
-	//cr_assert_str_empty(tab);
-}*/
+	cr_assert_eq(tab[2], NULL);
+}
 
 Test(unset_env, test)
 {

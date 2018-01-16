@@ -14,22 +14,14 @@
 int	choice_function(va_list tmp, char *balise)
 {
 	int i = 0;
-	int a = 0;
 	int size = 0;
-	int len = my_strlen(balise);
 
-	while (a != len) {
-		i = 0;
-		while (i != 12) {
-			if (balise[a] == tab[i].balise) {
-				size = tab[i].fptr(tmp, balise);
-				return (size);
-			}
-			i++;
+	while (i != 12) {
+		if (balise[0] == tab[i].balise) {
+			size = tab[i].fptr(tmp, balise);
+			return (size);
 		}
-		if (balise[a] == tab[i].balise)
-			my_putchar('%');
-	a++;
+		i++;
 	}
 	return (0);
 }

@@ -15,9 +15,9 @@ int	number_word(const char *str)
 	int nb = 0;
 
 	while (str[i] != '\0') {
-		if (str[i] > ' ' && str[i]<= '~')
-			if (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t')
-				nb++;
+		if ((str[i] > ' ' && str[i]<= '~') &&
+			(i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t'))
+			nb++;
 		i++;
 	}
 	return (nb);

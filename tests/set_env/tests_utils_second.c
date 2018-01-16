@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <criterion/criterion.h>
-char	**create_tab_test(); //tests/move_folder/four
+char	**create_tab_test(void); //tests/move_folder/four
 char	**built_set_env(char **env, char **argu);
 char	**set_env(char **env, char **argu);
 

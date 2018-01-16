@@ -5,7 +5,6 @@
 ** header get next line
 */
 
-
 #ifndef	__LIBGNL__
 #define	__LIBGNL__
 

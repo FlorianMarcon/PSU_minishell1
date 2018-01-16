@@ -11,7 +11,7 @@ int	is_syntax_executable(char *file);
 
 Test(is_executable, test1)
 {
-	char file[] = "../mysh\0";
+	char file[] = "data/a.out\0";
 	char file2[] = "saluuuut\0";
 
 	cr_assert_eq(is_executable(file), 1);

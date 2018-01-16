@@ -53,8 +53,7 @@ char	**move_folder(char **env, char *argu)
 	i = 0;
 	while (env[i] != find_occurence_env(env, "PWD\0") && env[i] != NULL)
 		i++;
-	if (env[i] != NULL) {
+	if (env[i] != NULL)
 		env[i] = pwd;
-	}
 	return (env);
 }

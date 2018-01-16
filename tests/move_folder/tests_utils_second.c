@@ -10,7 +10,7 @@
 char	*modifi_position(char *pwd, char *argu);
 #include <stdio.h>
 
-char	*create_pwd()
+char	*create_pwd(void)
 {
 	char *pwd = malloc(sizeof(char) * 16);
 

@@ -18,7 +18,7 @@ SRC	=	$(wildcard *.c)		\
 		src_printf/functions_printsecond.c		\
 		src_printf/functions_printthird.c		\
 		src_printf/print_speci.c	\
-		src_printf/speci.c		\
+		src_printf/find_speci.c		\
 		convert_base/conv_base_to.c	\
 		convert_base/convert_base.c	\
 

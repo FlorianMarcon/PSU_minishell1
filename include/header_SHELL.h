@@ -8,6 +8,6 @@
 #ifndef SHELL_
 #define SHELL_
 
-int	main_loop();
+int	main_loop(char **envp);
 
 #endif

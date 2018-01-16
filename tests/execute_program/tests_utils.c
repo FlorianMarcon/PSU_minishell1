@@ -33,7 +33,9 @@ Test(binaire_is_present, test2)
 Test(path_for_execute_program, test1)
 {
 	char *str = malloc(sizeof(char) * 147);
-	str = my_strcpy(str, "PATH=/home/marcon/bin:/home/marcon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\0");
+	str = my_strcpy(str, "PATH=/home/marcon/bin:/home/marcon/.local/bin\
+	:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\
+	:/usr/games:/usr/local/games:/snap/bin\0");
 	char *env[] = {"PWD=/home/marcon\0", str, NULL};
 	char *argu[] = {"ls\0", "other argu inutile", NULL};
 
@@ -45,7 +47,9 @@ Test(path_for_execute_program, test1)
 Test(execute_program, test1)
 {
 	char *str = malloc(sizeof(char) * 147);
-	str = my_strcpy(str, "PATH=/home/marcon/bin:/home/marcon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\0");
+	str = my_strcpy(str, "PATH=/home/marcon/bin:/home/marcon/.local/bin\
+	:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\
+	:/usr/games:/usr/local/games:/snap/bin\0");
 	char *env[] = {"PWD=\0", str, NULL};
 	char *argu[] = {"echo", "salut", NULL};
 

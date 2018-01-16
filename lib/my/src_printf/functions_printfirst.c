@@ -39,19 +39,17 @@ int	print_s(va_list tmp, char *str)
 	int i = 0;
 	int speci = find_speci(str);
 
-	if (speci == 4) {
-		while (string[i] != '\0') {
-			if (string[i] < 32 || string [i] >= 127) {
-				size += print_s_octal(string[i]);
-			}
-			else{
-				my_putchar(string[i]);
-				size++;
-			}
-			i++;
+	while (string[i] != '\0') {
+		if (string[i] < 32 || string [i] >= 127) {
+			size += print_s_octal(string[i]);
 		}
+		else{
+			my_putchar(string[i]);
+			size++;
+		}
+		i++;
 	}
-	else
+	if (speci != 4)
 		my_putstr("\nDON'T NEED TO PRECISION: ONLY %%S\n");
 	return (1);
 }

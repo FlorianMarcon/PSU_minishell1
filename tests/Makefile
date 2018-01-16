@@ -58,6 +58,7 @@ SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		display_path/tests_utils.c			\
 		execute_program/tests_utils.c			\
 		execute_program/tests_utils_second.c		\
+		my_printf/tests_utils.c				\
 
 OBJ	=	$(SRC:.c=.o)
 
