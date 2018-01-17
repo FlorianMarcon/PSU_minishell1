@@ -21,6 +21,7 @@ SRC	=	$(WAY)/main_loop.c					\
 		$(WAY)/utilitaries/is_executable.c			\
 		$(WAY)/set_env/set_env.c				\
 		$(WAY)/set_env/built_set_env.c				\
+		$(WAY)/set_env/create_env_by_default.c			\
 		$(WAY)/unset_env/unset_env.c				\
 		$(WAY)/unset_env/built_unset_env.c			\
 		$(WAY)/display_env/display_env.c			\
@@ -39,6 +40,7 @@ SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		how_long_tab/tests_utils.c			\
 		set_env/tests_utils.c				\
 		set_env/tests_utils_second.c			\
+		set_env/tests_utils_third.c			\
 		unset_env/tests_utils.c				\
 		display_env/tests_utils.c			\
 		exit/tests_utils.c				\

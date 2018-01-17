@@ -68,7 +68,6 @@ void	execution(char **argu, char **env)
 		waitpid(pid, &lock, 0);
 		exit_status_child(lock);
 	}
-	exit_status_child(lock);
 }
 
 void	execute_program(char **env, char **argu)

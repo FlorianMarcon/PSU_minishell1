@@ -7,6 +7,8 @@
 
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <unistd.h>
+#include <stdio.h>
 #include "my.h"
 
 int	program_signal_sigsev(int lock)
@@ -21,8 +23,8 @@ int	program_signal_sigsev(int lock)
 
 int	program_signal_coredump(int lock)
 {
-	if (WCOREDUMP(lock) == 1) {
-		my_printf("Segmentation fault (core dump)\n");
+	if (WCOREDUMP(lock) != 0) {
+		my_printf("Segmentation fault (core dumped)\n");
 		return (84);
 	}
 	else
@@ -33,7 +35,7 @@ int	exit_status_child(int lock)
 {
 	if (WIFSIGNALED(lock) == 1) {
 		program_signal_coredump(lock);
-		program_signal_sigsev(lock);
+//		program_signal_sigsev(lock);
 	}
 	return (0);
 }
