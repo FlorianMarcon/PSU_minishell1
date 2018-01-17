@@ -16,5 +16,7 @@ char	*get_value_var_env(char *var)
 		return (NULL);
 	while (var[i] != '=' && var[i + 1] != '\0')
 		i++;
+	if (var[i + 1] == '\0')
+		return (NULL);
 	return (&var[i + 1]);
 }

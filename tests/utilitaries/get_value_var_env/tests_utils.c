@@ -22,7 +22,7 @@ Test(get_value_var_env, test2)
 	char str[] = "FLONFLON=\0";
 	char *var = get_value_var_env(str);
 
-	cr_assert_str_eq(var, "\0");
+	cr_assert_eq(var, NULL);
 }
 Test(get_value_var_env, test3)
 {

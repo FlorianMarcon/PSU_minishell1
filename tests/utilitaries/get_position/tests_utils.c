@@ -33,5 +33,5 @@ Test(get_position, test2)
 	tab[1] = str;
 	tab[2] = NULL;
 	result = get_position(tab);
-	cr_assert_str_eq(result, "\0");
+	cr_assert_eq(result, NULL);
 }

@@ -14,6 +14,8 @@ char	*get_position(char **env)
 {
 	char *pwd = find_occurence_env(env, "PWD");
 
+	if (pwd == NULL)
+		return (NULL);
 	pwd = get_value_var_env(pwd);
 	return (pwd);
 }

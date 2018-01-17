@@ -10,12 +10,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 char	**create_env_by_default(void);
+char	**control_env(char **envp);
 
 int	main(int ac, char **av, char **envp)
 {
 	if (ac == 1) {
-		if (envp == NULL)
-			envp = create_env_by_default();
+		envp = control_env(envp);
 		main_loop(envp);
 	} else
 		my_printf("%s: Error syntax.", av[1]);

@@ -13,7 +13,7 @@ char	**create_env_by_default(void)
 {
 	char **env = NULL;
 	char path[] = "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin\
-			:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\0";
+:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\0";
 
 	if ((env = malloc(sizeof(char *) * 3)) == NULL)
 		return (NULL);

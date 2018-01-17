@@ -17,6 +17,7 @@ void	display_path(char **env);
 int	how_long_tab(const char **tab);
 void	destroy_element_tab(char **tab);
 void	execute_program(char **env, char **argu);
+char	**control_env(char **envp);
 
 int	main_loop(char **envp)
 {
@@ -25,6 +26,7 @@ int	main_loop(char **envp)
 	char **env = my_arrcpy(envp);
 	char **tmp = NULL;
 
+	display_path(env);
 	while ((str = get_next_line(0)) != NULL) {
 		argu = my_str_to_word_array(str);
 		if (argu[0] == NULL) {
@@ -36,6 +38,7 @@ int	main_loop(char **envp)
 			execute_program(env, argu);
 			destroy_element_tab(argu);
 		}
+		display_path(env);
 	}
 	return (0);
 }

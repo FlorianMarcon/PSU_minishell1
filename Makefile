@@ -23,6 +23,7 @@ SRC	=	$(WAY)/main.c						\
 		$(WAY)/set_env/set_env.c				\
 		$(WAY)/set_env/built_set_env.c				\
 		$(WAY)/set_env/create_env_by_default.c			\
+		$(WAY)/set_env/control_env.c				\
 		$(WAY)/unset_env/unset_env.c				\
 		$(WAY)/unset_env/built_unset_env.c			\
 		$(WAY)/display_env/display_env.c			\
