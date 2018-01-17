@@ -35,6 +35,7 @@ SRC	=	$(WAY)/main.c						\
 		$(WAY)/display_path/display_path.c			\
 		$(WAY)/execute_program/execute_program.c		\
 		$(WAY)/execute_program/signal_program.c			\
+		$(WAY)/garbage_collector/garbage_collector.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -42,7 +43,7 @@ NAME	=	mysh
 
 CFLAGS	=	-Wall -W -Wextra -Werror -I./include -g3
 
-LIB	=	-L./lib/my -lmy -lgnl
+LIB	=	-L./lib/my -lmy
 
 all:	$(OBJ)
 	make -C./lib/my

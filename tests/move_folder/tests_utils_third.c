@@ -26,26 +26,6 @@ char	**create_tab()
 	return (tab);
 }
 
-Test(move_folder, test1)
-{
-	char **env = create_tab();
-	char str2[] = "PWD=/lib/systemd\0";
-	char argu[] = "../././../\0";
-	char str[] = "a\0";
-
-	env[1] = str2;
-	env = move_folder(env, argu);
-	cr_assert_str_eq(env[0], str);
-	cr_assert_str_eq(env[1], "PWD=\0");
-	cr_assert_str_eq(env[2], str);
-	cr_assert_eq(env[3], NULL);
-	env = move_folder(env, argu);
-	cr_assert_str_eq(env[0], str);
-	cr_assert_str_eq(env[1], "PWD=\0");
-	cr_assert_str_eq(env[2], str);
-	cr_assert_eq(env[3], NULL);
-}
-
 Test(move_folder, test2)
 {
 	char **env = create_tab();
@@ -62,6 +42,21 @@ Test(move_folder, test2)
 	env = move_folder(env, argu);
 	cr_assert_str_eq(env[0], str);
 	cr_assert_str_eq(env[1], "PWD=/lib\0");
+	cr_assert_str_eq(env[2], str);
+	cr_assert_eq(env[3], NULL);
+}
+
+Test(move_folder, test1)
+{
+	char **env = create_tab();
+	char str2[] = "PWD=/lib/systemd\0";
+	char argu[] = "../././../\0";
+	char str[] = "a\0";
+
+	env[1] = my_strcat(str2, "\0");
+	env = move_folder(env, my_strcat(argu, "\0"));
+	cr_assert_str_eq(env[0], str);
+	cr_assert_str_eq(env[1], "PWD=\0");
 	cr_assert_str_eq(env[2], str);
 	cr_assert_eq(env[3], NULL);
 }

@@ -46,6 +46,22 @@ Test(unset_env, test)
 	cr_assert_eq(how_long_tab((const char **)env), 1);
 	cr_assert_eq(env[1], NULL);
 }
+Test(unset_env, test2)
+{
+	char str1[] = "MOUI=theBest";
+	char str2[] = "OUI=je me la pete";
+	char **env = malloc(sizeof(char *) * 3);
+	char *var = "FLONFLON";
+
+	env[0] = str1;
+	env[1] = str2;
+	env[2] = NULL;
+	env = unset_env(env, var);
+	cr_assert_str_eq(env[0], str1);
+	cr_assert_str_eq(env[1], str2);
+	cr_assert_eq(how_long_tab((const char **)env), 2);
+	cr_assert_eq(env[2], NULL);
+}
 
 Test(built_unset_env, test1)
 {

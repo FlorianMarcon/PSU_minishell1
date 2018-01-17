@@ -70,7 +70,7 @@ NAME	=	./units
 
 CFLAGS	=	-Wall -W -Wextra -Werror -I../include -g3 --coverage
 
-LIB	=	-L../lib/my -lmy -lgnl
+LIB	=	-L../lib/my -lmy
 
 LDFLAGS	=	-lcriterion -lgcov
 

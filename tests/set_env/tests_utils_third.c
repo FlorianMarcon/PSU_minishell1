@@ -15,5 +15,5 @@ Test(create_env_by_default, test1) {
 
 	cr_assert_str_eq("PWD=/home/marcon/Repository/SEMESTRE_1/\
 PSU_minishell1_2017/tests\0", env[0]);
-	cr_assert_eq(env[1], NULL);
+	cr_assert_eq(env[2], NULL);
 }

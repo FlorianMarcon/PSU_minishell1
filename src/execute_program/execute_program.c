@@ -72,10 +72,11 @@ void	execution(char **argu, char **env)
 
 void	execute_program(char **env, char **argu)
 {
-	char *path = path_for_execute_program(env, argu);
+	char *tmp = path_for_execute_program(env, argu);
+	char *path = NULL;
 
-	if (path != NULL) {
-		path = my_strcat(path, "/\0");
+	if (tmp != NULL) {
+		path = my_strcat(tmp, "/\0");
 		argu[0] = my_strcat(path, argu[0]);
 		execution(argu, env);
 	} else if (is_executable(argu[0]) == 1) {

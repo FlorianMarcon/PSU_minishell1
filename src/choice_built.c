@@ -13,6 +13,7 @@ char	**built_display_env(char **env, char **argu);
 char	**built_set_env(char **env, char **argu);
 char	**built_unset_env(char **env, char **argu);
 char	**built_exit_program(char **env, char **argu);
+void	destroy_element_tab(char **tab);
 
 typedef struct built_in {
 	char *name;
@@ -29,11 +30,13 @@ const built_in_t list[6] = {{"cd\0", &built_move_folder},
 char	**choice_built(char **env, char **argu)
 {
 	int i = 0;
+	char **tmp = NULL;
 
 	while (list[i].name != NULL) {
 		if (my_strcmp(argu[0], list[i].name) == 0) {
-			env = list[i].fptr(env, &argu[1]);
-			return (env);
+			tmp = list[i].fptr(env, &argu[1]);
+			destroy_element_tab(argu);
+			return (tmp);
 		}
 		i++;
 	}

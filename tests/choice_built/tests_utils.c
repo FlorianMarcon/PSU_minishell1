@@ -7,16 +7,21 @@
 
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
+#include "my.h"
 char	**choice_built(char **env, char **argu);
 char	**create_tab_test(void);
 char	**my_arrcpy(char **arr);
+void	destroy_element_tab(char **tab);
 
 Test(choice_built, display_env)
 {
-	char *env[] = {"FLONFLON", "YES", NULL};
-	char *argu[] = {"env\0", NULL};
+	char *var[] = {"FLONFLON", "YES", NULL};
+	char **env = my_arrcpy(var);
+	char **argu = my_arrcpy(var);
 	char **tmp = NULL;
 
+	argu[0] = my_strcat("env\0", "\0");
+	argu[1] = NULL;
 	cr_redirect_stdout();
 	tmp = choice_built(env, argu);
 	cr_assert_stdout_eq_str("FLONFLON\nYES\n");
@@ -73,6 +78,8 @@ Test(choice_built, unsetenv)
 	cr_assert_str_eq(tmp[0], env[0]);
 	cr_assert_str_eq(tmp[1], env[2]);
 	cr_assert_eq(tmp[2], NULL);
+	destroy_element_tab(env);
+	destroy_element_tab(argu);
 }
 
 Test(choice_built, exit, .exit_code = 0)
@@ -82,4 +89,6 @@ Test(choice_built, exit, .exit_code = 0)
 	char **argu = my_arrcpy(argup);
 
 	choice_built(env, argu);
+	destroy_element_tab(env);
+	destroy_element_tab(argu);
 }

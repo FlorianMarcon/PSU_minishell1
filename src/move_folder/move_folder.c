@@ -38,22 +38,22 @@ char	**move_folder(char **env, char *argu)
 {
 	char *pwd = find_occurence_env(env, "PWD\0");
 	char *tmp = NULL;
-	int i = 0;
 	int size = my_strlen(argu);
+	int i = 0;
 
-	while (i < size) {
-		if (argu[i] == '/') {
-			i++;
-		} else {
+	for (i = 0; i < size; i++) {
+		if (argu[i] != '/') {
 			tmp = cut_before_slash(&argu[i]);
 			pwd = modifi_position(pwd, tmp);
-			i += my_strlen(tmp) + 1;
+			i += my_strlen(tmp);
 		}
 	}
 	i = 0;
 	while (env[i] != find_occurence_env(env, "PWD\0") && env[i] != NULL)
 		i++;
-	if (env[i] != NULL)
+	if (env[i] != NULL) {
+		tmp = env[i];
 		env[i] = pwd;
+	}
 	return (env);
 }

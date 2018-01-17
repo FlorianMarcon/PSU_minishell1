@@ -19,11 +19,11 @@ char	*my_strcat(char *dest, char const *src)
 	if ((resultat = malloc(sizeof(char) * len)) == NULL)
 		return (NULL);
 	len = 0;
-	while (dest[len] != '\0') {
+	while (dest != NULL && dest[len] != '\0') {
 		resultat[len] = dest[len];
 		len++;
 	}
-	while (src[i] != '\0') {
+	while (src != NULL && src[i] != '\0') {
 		resultat[len] = src[i];
 		len++;
 		i++;
