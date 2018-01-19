@@ -7,14 +7,20 @@
 
 #include "my.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 char	*delete_position(char *pwd)
 {
-	int i = my_strlen(pwd);
+	int size = my_strlen(pwd);;
+	int i = size;
+	char *new = NULL;
 
-	while (pwd[i] != '/' && pwd[i - 1] != '=')
+	if ((new = malloc(sizeof(char) * size + 1)) == NULL)
+		return (NULL);
+	my_strcpy(new, pwd);
+	while (new[i] != '/' && new[i - 1] != '=')
 		i--;
-	pwd[i] = '\0';
+	new[i] = '\0';
 	chdir("..");
-	return (pwd);
+	return (new);
 }

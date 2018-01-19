@@ -31,6 +31,6 @@ char	*add_position(char *pwd, char *argu)
 	} else {
 		my_printf("%s: N'est pas un dossier.\n", argu);
 		free(new);
-		return (pwd);
+		return (NULL);
 	}
 }

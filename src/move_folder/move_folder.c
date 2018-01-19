@@ -41,17 +41,16 @@ char	**move_folder(char **env, char *argu)
 	int size = my_strlen(argu);
 	int i = 0;
 
-	for (i = 0; i < size; i++) {
+	for (i = 0; i < size && pwd != NULL; i++) {
 		if (argu[i] != '/') {
 			tmp = cut_before_slash(&argu[i]);
 			pwd = modifi_position(pwd, tmp);
 			i += my_strlen(tmp);
 		}
 	}
-	i = 0;
-	while (env[i] != find_occurence_env(env, "PWD\0") && env[i] != NULL)
+	for (i = 0; env[i] != find_occurence_env(env, "PWD\0") && env[i] != NULL;)
 		i++;
-	if (env[i] != NULL) {
+	if (env[i] != NULL && pwd != NULL) {
 		tmp = env[i];
 		env[i] = pwd;
 	}

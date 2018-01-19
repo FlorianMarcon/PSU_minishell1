@@ -33,6 +33,7 @@ SRC	=	$(WAY)/main.c						\
 		$(WAY)/move_folder/delete_position.c			\
 		$(WAY)/move_folder/add_position.c			\
 		$(WAY)/move_folder/built_move_folder.c			\
+		$(WAY)/move_folder/move_racine.c			\
 		$(WAY)/display_path/display_path.c			\
 		$(WAY)/execute_program/execute_program.c		\
 		$(WAY)/execute_program/signal_program.c			\

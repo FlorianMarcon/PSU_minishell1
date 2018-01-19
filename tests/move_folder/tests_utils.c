@@ -62,5 +62,5 @@ Test(add_position, test2)
 	pwd[3] = '=';
 	pwd[4] = '\0';
 	new = add_position(pwd, argu);
-	cr_assert_str_eq(new, "PWD=\0");
+	cr_assert_eq(new, NULL);
 }

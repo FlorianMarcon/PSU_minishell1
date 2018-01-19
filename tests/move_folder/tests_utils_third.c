@@ -60,3 +60,18 @@ Test(move_folder, test1)
 	cr_assert_str_eq(env[2], str);
 	cr_assert_eq(env[3], NULL);
 }
+
+Test(move_folder, test3)
+{
+	char **env = create_tab();
+	char str2[] = "PWD=/home\0";
+	char argu[] = "../dfzasqhj\0";
+	char str[] = "a\0";
+
+	env[1] = my_strcat(str2, "\0");
+	env = move_folder(env, my_strcat(argu, "\0"));
+	cr_assert_str_eq(env[0], str);
+	cr_assert_str_eq(env[1], "PWD=/home\0");
+	cr_assert_str_eq(env[2], str);
+	cr_assert_eq(env[3], NULL);
+}

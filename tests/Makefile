@@ -32,6 +32,7 @@ SRC	=	$(WAY)/main_loop.c					\
 		$(WAY)/move_folder/delete_position.c			\
 		$(WAY)/move_folder/add_position.c			\
 		$(WAY)/move_folder/built_move_folder.c			\
+		$(WAY)/move_folder/move_racine.c			\
 		$(WAY)/display_path/display_path.c			\
 		$(WAY)/execute_program/execute_program.c		\
 		$(WAY)/execute_program/signal_program.c			\
@@ -52,6 +53,7 @@ SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		move_folder/tests_utils_second.c		\
 		move_folder/tests_utils_third.c			\
 		move_folder/tests_utils_four.c			\
+		move_folder/tests_utils_five.c			\
 		find_occurence_env/tests_utils.c		\
 		utilitaries/get_position/tests_utils.c		\
 		utilitaries/get_value_var_env/tests_utils.c	\

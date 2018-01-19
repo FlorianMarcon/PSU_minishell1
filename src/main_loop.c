@@ -5,9 +5,9 @@
 ** main_loop
 */
 
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 #include "my.h"
 #include "get_next_line.h"
 char	**my_arrcpy(char **arr);
@@ -19,24 +19,36 @@ void	destroy_element_tab(char **tab);
 void	execute_program(char **env, char **argu);
 char	**control_env(char **envp);
 
+char	**action_argu(char **env, char *str)
+{
+	char **tmp = NULL;
+	char **argu = NULL;
+
+	argu = my_str_to_word_array(str);
+	if (argu[0] == NULL) {
+		destroy_element_tab(argu);
+	}
+	else if ((tmp = choice_built(env, argu)) != NULL) {
+		env = tmp;
+	} else {
+		execute_program(env, argu);
+		destroy_element_tab(argu);
+	}
+	return (env);
+}
 int	main_loop(char **envp)
 {
 	char *str = NULL;
-	char **argu = NULL;
 	char **env = my_arrcpy(envp);
-	char **tmp = NULL;
 
+	if (isatty(0))
+		display_path(env);
 	while ((str = get_next_line(0)) != NULL) {
-		argu = my_str_to_word_array(str);
-		if (argu[0] == NULL) {
-			destroy_element_tab(argu);
-		}
-		else if ((tmp = choice_built(env, argu)) != NULL) {
-			env = tmp;
-		} else {
-			execute_program(env, argu);
-			destroy_element_tab(argu);
-		}
+		env = action_argu(env, str);
+		free(str);
+		env = control_env(env);
+		if (isatty(0))
+			display_path(env);
 	}
 	return (0);
 }
