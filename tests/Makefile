@@ -44,6 +44,7 @@ SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		set_env/tests_utils_second.c			\
 		set_env/tests_utils_third.c			\
 		set_env/tests_utils_four.c			\
+		set_env/tests_utils_five.c			\
 		unset_env/tests_utils.c				\
 		display_env/tests_utils.c			\
 		exit/tests_utils.c				\

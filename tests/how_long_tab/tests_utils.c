@@ -49,3 +49,10 @@ Test(how_long_tab, test4)
 
 	cr_assert_eq(how_long_tab((const char **)env), 2);
 }
+
+Test(how_long_tab, test5)
+{
+	char **tab = NULL;
+
+	cr_assert_eq(how_long_tab((const char **)tab), 0);
+}
