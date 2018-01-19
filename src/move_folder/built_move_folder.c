@@ -28,7 +28,6 @@ char	**built_move_folder(char **env, char **argu)
 		my_printf("cd: Too many arguments.\n");
 	pwd = find_occurence_env(env, "PWD\0");
 	pwd = get_value_var_env(pwd);
-	printf("built_move_folder %s\n", pwd);
 	chdir(pwd);
 	return (env);
 }
