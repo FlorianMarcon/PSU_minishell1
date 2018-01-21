@@ -29,7 +29,9 @@ Test(parsing, test2)
 
 Test(parsing, test3)
 {
-	char str[] = "/home/marcon/bin:/home/marcon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\0";
+	char str[] = "/home/marcon/bin:/home/marcon/.local/bin:/usr/local/sbin:\
+/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:\
+/snap/bin\0";
 	char **tab = parsing(':', str);
 
 	cr_assert_str_eq(tab[0], "/home/marcon/bin\0");

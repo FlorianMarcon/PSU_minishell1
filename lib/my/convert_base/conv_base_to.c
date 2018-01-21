@@ -7,11 +7,8 @@
 
 #include "my.h"
 #include <stdlib.h>
-
 char	*base_10(char const *nbr, int base);
-
 int	how_chiffre(int nb);
-
 int	chiffre(char const nbr);
 
 void 	conv_base_to_second(char **buff, int var, int i, char **bss)

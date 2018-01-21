@@ -7,7 +7,6 @@
 
 #include <criterion/criterion.h>
 #include "my.h"
-
 void	exit_program(char **env, char **all, char *argu);
 
 Test(exit, expected_exit, .exit_code = 8)

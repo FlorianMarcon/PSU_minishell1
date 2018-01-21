@@ -7,8 +7,8 @@
 
 #include <criterion/criterion.h>
 #include "my.h"
-char	*modifi_position(char *pwd, char *argu);
 #include <stdio.h>
+char	*modifi_position(char *pwd, char *argu);
 
 char	*create_pwd(void)
 {
