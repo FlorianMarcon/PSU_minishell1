@@ -22,7 +22,6 @@ SRC	=	$(WAY)/main_loop.c					\
 		$(WAY)/set_env/set_env.c				\
 		$(WAY)/set_env/built_set_env.c				\
 		$(WAY)/set_env/create_env_by_default.c			\
-		$(WAY)/set_env/control_env.c				\
 		$(WAY)/unset_env/unset_env.c				\
 		$(WAY)/unset_env/built_unset_env.c			\
 		$(WAY)/display_env/display_env.c			\
@@ -36,10 +35,12 @@ SRC	=	$(WAY)/main_loop.c					\
 		$(WAY)/display_path/display_path.c			\
 		$(WAY)/execute_program/execute_program.c		\
 		$(WAY)/execute_program/signal_program.c			\
+		$(WAY)/control/control_env.c				\
+		$(WAY)/control/control_all.c				\
+		$(WAY)/control/control_position.c			\
 
 SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		convert_str_in_tab/tests_utils_second.c		\
-		how_long_tab/tests_utils.c			\
 		set_env/tests_utils.c				\
 		set_env/tests_utils_second.c			\
 		set_env/tests_utils_third.c			\
@@ -61,11 +62,13 @@ SRC_UT	=	convert_str_in_tab/tests_utils.c		\
 		utilitaries/my_arrcpy/tests_utils.c		\
 		utilitaries/parsing/tests_utils.c		\
 		utilitaries/is_executable/tests_utils.c		\
+		utilitaries/how_long_tab/tests_utils.c			\
 		choice_built/tests_utils.c			\
 		display_path/tests_utils.c			\
 		execute_program/tests_utils.c			\
 		execute_program/tests_utils_second.c		\
 		my_printf/tests_utils.c				\
+		control/tests_utils.c				\
 
 OBJ	=	$(SRC:.c=.o)
 

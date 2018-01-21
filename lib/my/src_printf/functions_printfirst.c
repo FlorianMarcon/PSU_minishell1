@@ -24,7 +24,7 @@ int	print_s_octal(char c)
 	var2 = convert_base(var2, "0123456789", "01234567");
 	size = my_strlen(var2);
 
-	while (i + size != 3){
+	while (i + size != 3) {
 		my_putchar('0');
 		i++;
 	}

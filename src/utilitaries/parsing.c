@@ -18,9 +18,8 @@ char	**parsing(char cut, char *str)
 	if (str == NULL)
 		return (NULL);
 	while (str[i] != '\0') {
-		if (str[i] == cut) {
+		if (str[i] == cut)
 			str[i] = ' ';
-		}
 		i++;
 	}
 	tab = my_str_to_word_array(str);

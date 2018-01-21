@@ -10,7 +10,8 @@
 #include <stdlib.h>
 char	**create_env_by_default(void);
 
-Test(create_env_by_default, test1) {
+Test(create_env_by_default, test1)
+{
 	char **env = create_env_by_default();
 
 	cr_assert_str_eq("PWD=/home/marcon/Repository/SEMESTRE_1/\

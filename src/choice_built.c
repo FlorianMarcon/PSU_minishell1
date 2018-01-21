@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "header_shell.h"
 #include <stdlib.h>
 #include <stdio.h>
 char	**built_move_folder(char **env, char **argu);

@@ -48,7 +48,8 @@ char	**move_folder(char **env, char *argu)
 			i += my_strlen(tmp);
 		}
 	}
-	for (i = 0; env[i] != find_occurence_env(env, "PWD\0") && env[i] != NULL;)
+	for (i = 0; env[i] != find_occurence_env(env, "PWD\0") &&
+								env[i] != NULL;)
 		i++;
 	if (env[i] != NULL && pwd != NULL) {
 		tmp = env[i];

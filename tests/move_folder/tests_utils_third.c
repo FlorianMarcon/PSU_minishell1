@@ -10,7 +10,7 @@
 #include "my.h"
 char	**move_folder(char **env, char *argu);
 
-char	**create_tab()
+char	**create_tab(void)
 {
 	char **tab = NULL;
 	char *str = malloc(sizeof(char) * 2);

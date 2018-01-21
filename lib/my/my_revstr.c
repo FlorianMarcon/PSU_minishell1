@@ -22,7 +22,7 @@ char	*my_revstr(char *str)
 	a = my_strlen(str);
 	a_start = a;
 	a--;
-	for (int i = 0; i != a_start / 2; i++){
+	for (int i = 0; i != a_start / 2; i++) {
 		variable = str[i];
 		str[i] = str[a];
 		str[a] = variable;

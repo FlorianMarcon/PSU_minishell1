@@ -6,7 +6,7 @@
 */
 
 #include "my.h"
-#include "header_SHELL.h"
+#include "header_shell.h"
 #include <stdlib.h>
 #include <stdio.h>
 char	**create_env_by_default(void);

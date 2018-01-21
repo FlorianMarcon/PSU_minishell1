@@ -35,7 +35,6 @@ int	exit_status_child(int lock)
 {
 	if (WIFSIGNALED(lock) == 1) {
 		program_signal_coredump(lock);
-//		program_signal_sigsev(lock);
 	}
 	return (0);
 }

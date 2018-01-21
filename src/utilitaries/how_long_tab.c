@@ -15,8 +15,8 @@ int	how_long_tab(const char **tab)
 
 	if (tab == NULL)
 		return (0);
-	while (tab[size] != NULL) {
+	while (tab[size] != NULL)
 		size++;
-	}
+
 	return (size);
 }
