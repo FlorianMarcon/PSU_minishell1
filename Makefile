@@ -23,7 +23,6 @@ SRC	=	$(WAY)/main.c						\
 		$(WAY)/set_env/set_env.c				\
 		$(WAY)/set_env/built_set_env.c				\
 		$(WAY)/set_env/create_env_by_default.c			\
-		$(WAY)/set_env/control_env.c				\
 		$(WAY)/unset_env/unset_env.c				\
 		$(WAY)/unset_env/built_unset_env.c			\
 		$(WAY)/display_env/display_env.c			\
@@ -38,6 +37,8 @@ SRC	=	$(WAY)/main.c						\
 		$(WAY)/execute_program/execute_program.c		\
 		$(WAY)/execute_program/signal_program.c			\
 		$(WAY)/garbage_collector/garbage_collector.c		\
+		$(WAY)/control/control_env.c				\
+		$(WAY)/control/control_all.c				\
 
 OBJ	=	$(SRC:.c=.o)
 
